@@ -1,0 +1,39 @@
+1. Why Django should be used for web-development? Explain how you
+can create a project in Django? 
+
+Ans : Django is a Python Framework for web development. It should be used because it allowes developers to use modules for faster web development. Developers don't have to do it from scrach. So, it speeds up to web development process.
+
+2. How to check installed version of django?
+
+Ans : With using "pip show djano" command, we can check the installed version of Django.
+
+3. Explain what does django-admin.py make messages command is used for?
+
+Ans : This command runs over the entire source tree of the current directory and pulls out all strings marked for translation.
+
+4 . What is Django URLs?make program to create django urls.
+Ans : Django URLs are a path which though which particular web page can be reached on in the web application. We can create a file named urls.py in the same folder as the views.py file, and type below command for index view:  It will take it though view named index in the views.py file
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('index/', views.index, name='index'),
+]
+
+5. What is a QuerySet?Write program to create a new Post object in database:
+Ans : QuerySet is built up as a list of objects. To create post object in databse. First of all we have to creat model:
+
+from django.db import models
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+
+
+We can access the data from database by creating object of this model.
+
+p = Person.objects.all()
+or
+p1 = Person.objects.get()
